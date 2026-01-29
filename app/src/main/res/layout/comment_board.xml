@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommentBoard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="COMMENT BOARD"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:paddingVertical="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/findButton"
+                android:layout_width="0dp"
+                android:paddingHorizontal="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:onClick="FindButton"
+                android:text="Find"
+                android:textSize="25dp"/>
+
+            <EditText
+                android:id="@+id/searchTags"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:textSize="25dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Include Sketches"
+                android:id="@+id/includeSketchBox"
+                android:onClick="includeSketchBox"
+                />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:id="@+id/myList">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
+
+            <TextView
+                android:id="@+id/selection"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="you selected:\nN/A"
+                android:textSize="15dp"
+                android:paddingVertical="10dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="10dp"
+                />
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:text="Comment"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:onClick="CommentButton"
+                />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:id="@+id/commentsList">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/BackButton"
+            android:layout_width="380dp"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:onClick="backButton"
+            android:text="Back"
+            android:textSize="25dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
